@@ -1,6 +1,8 @@
 import requests
 import os
 from dotenv import load_dotenv
+import time
+
 
 load_dotenv()
 url = "https://api.weatherapi.com/v1/current.json"
@@ -14,6 +16,7 @@ params = {
 }
 
 def get_weather() -> None:
+
 
     res = requests.get(url, params=params, timeout=10)
     res.raise_for_status()
